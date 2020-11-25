@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  #Default settings
+\*------------------------------------*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
