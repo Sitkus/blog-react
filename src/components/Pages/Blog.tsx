@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import useStyles from './Post.style';
+import useStyles from './Blog.style';
 import PostContext from '../../PostContext';
 
-const Post = () => {
+const Blog = () => {
   const { postName, setPostName } = useContext(PostContext);
 
   return (
     <div>
-      Test
+      Its a blog, welcome!
     </div>
   );
 }
 
-export default Post;
+export default Blog;
