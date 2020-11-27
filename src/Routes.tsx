@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import { Blog, Post, Header, Footer } from './components/';
 import PostContext from './PostContext';
+import Grid from '@material-ui/core/Grid';
 import './css/style.css';
 
 const Routes = () => {
@@ -17,8 +18,12 @@ const Routes = () => {
       <PostContext.Provider value={{ postName, setPostName }}>
         <Header />
         <Switch>
-          <Route exact path={'/'} component={Blog} />
-          <Route exact path={`/${postName}`} component={Post} />
+          <Grid container>
+            <Grid item sm={2}></Grid>
+            <Route exact path={'/'} component={Blog} />
+            <Route exact path={`/${postName}`} component={Post} />
+            <Grid item sm={2}></Grid>
+          </Grid>
         </Switch>
         <Footer />
       </PostContext.Provider>
