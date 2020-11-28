@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import useStyles from './Posts.style';
 import PostContext from '../../PostContext';
 
@@ -20,17 +21,20 @@ const Posts = () => {
     {
       title: 'Lizard',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-      image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'
+      image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg',
+      href: '/lizard'
     },
     {
       title: 'Lizard',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-      image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'
+      image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg',
+      href: '/killa'
     },
     {
       title: 'Lizard',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-      image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'
+      image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg',
+      href: '/vanilla'
     }
   ]);
 
@@ -38,9 +42,9 @@ const Posts = () => {
     <>
       {
         posts.map((post, index) => (
-          <Grid item>
+          <Grid item key={index}>
             <Card className={classes.root}>
-              <CardActionArea>
+              {/* <CardActionArea> */}
                 <CardMedia
                   className={classes.media}
                   image={post.image}
@@ -54,14 +58,13 @@ const Posts = () => {
                     {post.description}
                   </Typography>
                 </CardContent>
-              </CardActionArea>
+              {/* </CardActionArea> */}
               <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
-                </Button>
+                <Link onClick={() => setPostName(post.href)} to={post.href} className={classes.link}>
+                  <Button size="medium" color="primary">
+                    Read More...
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>

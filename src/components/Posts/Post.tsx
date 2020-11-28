@@ -6,9 +6,9 @@ const Post = () => {
   const { postName, setPostName } = useContext(PostContext);
 
   return (
-    <div>
-      Test
-    </div>
+    <h1>
+      POST HERE
+    </h1>
   );
 }
 

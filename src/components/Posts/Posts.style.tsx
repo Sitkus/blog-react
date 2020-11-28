@@ -5,8 +5,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: 700
   },
   media: {
-    height: 200,
+    height: 260,
   },
+  link: {
+    textDecoration: 'none'
+  }
 }));
 
 export default useStyles;
