@@ -12,11 +12,17 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
     h1: {
+      color: '#ffd710',
       fontWeight: 'normal',
-      fontSize: '26px'
+      fontSize: '30px'
     },
     h2: {
-      fontSize: '16px'
+      fontWeight: 'normal',
+      fontSize: '25px'
+    },
+    h3: {
+      fontWeight: 'normal',
+      fontSize: '21px'
     }
   }
 });

@@ -39,7 +39,6 @@ const Routes = () => {
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
       content: {
         heading1: 'Heading 1',
-        heading2: 'Heading 2',
         body1: [
           'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
           'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
