@@ -1,6 +1,13 @@
 import { createContext } from 'react';
 
-interface PostProps {
+interface Content {
+  heading1: string;
+  heading2?: string;
+  body1: string[];
+  body2?: string[];
+}
+
+interface Props {
   postHref: string;
   setPostHref: any;
   posts: PostsProps[];
@@ -10,10 +17,11 @@ interface PostProps {
 interface PostsProps {
   title: string;
   description: string;
+  content: Content;
   image: string;
   href: string;
 }
 
-const PostContext = createContext<PostProps>({ postHref: '', setPostHref: '', posts: [], setPosts: [] });
+const PostContext = createContext<Props>({ postHref: '', setPostHref: '', posts: [], setPosts: [] });
 
 export default PostContext;

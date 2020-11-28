@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useStyles from './Header.style';
 
-// Material UI
+// Material UI Imports
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const Header = () => {
   const classes = useStyles();
@@ -16,22 +17,23 @@ const Header = () => {
     <AppBar position="static" className={classes.root}>
       <Toolbar className={classes.root}>
         <Typography className={classes.title} variant="h6">
-          Blog
+          <Link to={'/'} className={classes.link}>
+            Blog
+          </Link>
         </Typography>
-        <div className={classes.search}>
-          <InputBase
-            className={classes.input}
-            placeholder="Search Blog Post"
-            inputProps={{ 'aria-label': 'search blog post' }}
-          />
-          <IconButton 
-            color="inherit"
-            type="submit" 
-            aria-label="search"
-          >
-            <SearchIcon />
-          </IconButton>
-        </div>
+        <Input
+          id="input-with-icon-adornment"
+          placeholder="Search..."
+          classes={{
+            root: classes.inputRoot,
+            underline: classes.inputUnderline
+          }}
+          startAdornment={
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          }
+        />
       </Toolbar>
     </AppBar>
   );

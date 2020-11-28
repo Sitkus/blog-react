@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import useStyles from './Blog.style';
 import Posts from '../Posts/Posts';
 
-// Material UI
+// Material UI Imports
 import Grid from '@material-ui/core/Grid';
 
 const Blog = () => {

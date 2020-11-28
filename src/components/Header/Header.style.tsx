@@ -6,6 +6,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.secondary.main,
     color: 'white'
   },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit',
+    '&:hover': {
+      color: theme.palette.primary.main
+    }
+  },
   title: {
     flexGrow: 1
   },
@@ -13,9 +20,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: theme.shape.borderRadius,
     width: 'auto'
   },
-  input: {
-    color: 'white !important',
-    marginLeft: theme.spacing(2)
+  inputRoot: {
+    color: 'white !important'
+  },
+  inputUnderline: {
+    '&:before': {
+      borderBottom: '1px solid gray !important',
+    },
+    '&:after': {
+      borderBottom: `1px solid ${theme.palette.primary.main} !important`
+    }
   }
 }));
 

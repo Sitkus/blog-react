@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from './Posts.style';
-import PostContext from '../../contexts/PostContext';
+import PostContext from '../../context/PostContext';
 
-// Material UI
+// Material UI Imports
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -16,10 +16,6 @@ import Grid from '@material-ui/core/Grid';
 const Posts = () => {
   const classes = useStyles();
   const { postHref, setPostHref, posts, setPosts } = useContext(PostContext);
-
-  const createPost = (post: {}) => {
-
-  }
 
   return (
     <>
@@ -44,11 +40,8 @@ const Posts = () => {
               {/* </CardActionArea> */}
               <CardActions>
                 <Link 
-                    onClick={() => {
-                      setPostHref(post.href);
-                      createPost(post);
-                    }} 
-                    to={`/post/${post.href}`}
+                    onClick={() => setPostHref(post.href)} 
+                    to={`${post.href}`}
                     className={classes.link}
                   >
                   <Button size="medium" color="primary">
