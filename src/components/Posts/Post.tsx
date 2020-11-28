@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
 import useStyles from './Post.style';
-import PostContext from '../../PostContext';
+import PostContext from '../../contexts/PostContext';
 
 const Post = () => {
-  const { postName, setPostName } = useContext(PostContext);
+  const { postHref, setPostHref, posts, setPosts } = useContext(PostContext);
 
   return (
-    <h1>
-      POST HERE
-    </h1>
+    <>
+      {
+        posts.map((post, index) => (
+          post.href === postHref ? 
+          <h1 key={index}>{post.title}</h1> :
+          null
+        ))
+      }
+    </>
   );
 }
 
