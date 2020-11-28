@@ -6,10 +6,28 @@ import PostContext from '../../context/PostContext';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 const Post = () => {
   const classes = useStyles();
   const { postHref, setPostHref, posts, setPosts } = useContext(PostContext);
+
+  const previousPost = (index: number) => {
+    index -= 1;
+
+    if (index > 0) {
+      setPostHref(posts[index].href);
+    }
+  }
+
+  const nextPost = (index: number) => {
+    index += 1;
+
+    if (index < posts.length) {
+      setPostHref(posts[index].href);
+    }
+  }
 
   return (
     <>
@@ -41,6 +59,10 @@ const Post = () => {
                 )) :
                 null
               }
+              <ButtonGroup fullWidth disableElevation variant="contained" color="primary">
+                <Button onClick={() => previousPost(index)}>Previous</Button>
+                <Button onClick={() => nextPost(index)}>Next</Button>
+              </ButtonGroup>
             </Container>
           </Grid> :
           null

@@ -44,7 +44,7 @@ const Posts = () => {
                     to={`${post.href}`}
                     className={classes.link}
                   >
-                  <Button size="medium" color="primary">
+                  <Button size="small" color="secondary" variant="outlined">
                     Read More...
                   </Button>
                 </Link>
