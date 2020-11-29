@@ -7,10 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     marginBottom: '20px',
   },
-  heading1: {
-    margin: '50px 0 30px'
-  },
-  heading2: {
+  heading: {
     margin: '50px 0 30px'
   },
   paragraph: {

@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import useStyles from './Posts.style';
-import PostContext from '../../context/PostContext';
+import { usePostHref, usePosts } from '../../context/PostsContext';
 
 // Material UI Imports
 import Card from '@material-ui/core/Card';
@@ -15,7 +15,15 @@ import Grid from '@material-ui/core/Grid';
 
 const Posts = () => {
   const classes = useStyles();
-  const { postHref, setPostHref, posts, setPosts } = useContext(PostContext);
+  const history = useHistory();
+
+  const { setPostHref } = usePostHref();
+  const { posts } = usePosts();
+
+  const openPost = (href: string) => {
+    setPostHref(href);
+    history.push(href);
+  }
 
   return (
     <>
@@ -23,7 +31,7 @@ const Posts = () => {
         posts.map((post, index) => (
           <Grid item key={index}>
             <Card className={classes.root}>
-              {/* <CardActionArea> */}
+              <CardActionArea onClick={() => openPost(post.href)}>
                 <CardMedia
                   className={classes.media}
                   image={post.image}
@@ -37,17 +45,11 @@ const Posts = () => {
                     {post.description}
                   </Typography>
                 </CardContent>
-              {/* </CardActionArea> */}
+              </CardActionArea>
               <CardActions>
-                <Link 
-                    onClick={() => setPostHref(post.href)} 
-                    to={`${post.href}`}
-                    className={classes.link}
-                  >
-                  <Button size="small" color="secondary" variant="outlined">
-                    Read More...
-                  </Button>
-                </Link>
+                <Button onClick={() => openPost(post.href)} size="small" color="secondary">
+                  Read More...
+                </Button>
               </CardActions>
             </Card>
           </Grid>
