@@ -13,6 +13,11 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 const Header = () => {
   const classes = useStyles();
 
+  const filterPosts = (input: string) => {
+    console.log(input);
+    
+  }
+
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar className={classes.root}>
@@ -24,6 +29,7 @@ const Header = () => {
         <Input
           id="input-with-icon-adornment"
           placeholder="Search..."
+          onChange={(e) => filterPosts(e.target.value)}
           classes={{
             root: classes.inputRoot,
             underline: classes.inputUnderline

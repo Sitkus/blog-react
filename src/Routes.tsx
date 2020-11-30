@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Blog, Post, Header, Footer } from './components/';
 import { usePostHref } from './context/PostsContext';
 import './css/style.css';
@@ -16,18 +17,30 @@ const Routes = () => {
 
   return (
     <Router>
-      <Header />
-      <Grid container>
-        <Grid item xs={1} sm={2}></Grid>
-        <Switch>
-          <>
-            <Route exact path={'/'} component={Blog} />
-            <Route exact path={`${postHref}`} component={Post} />
-          </>
-        </Switch>
-        <Grid item xs={1} sm={2}></Grid>
-      </Grid>
-      <Footer />
+      <Route render={({ location }) => (
+      <>
+        <Header />
+          <TransitionGroup>
+            <CSSTransition
+              timeout={300}
+              classNames='fade'
+              key={location.key}
+            >
+              <Grid container>
+                <Grid item xs={1} sm={2}></Grid>
+                <Switch location={location}>
+                  <>
+                    <Route exact path={'/'} component={Blog} />
+                    <Route exact path={`${postHref}`} component={Post} />
+                  </>
+                </Switch>
+                <Grid item xs={1} sm={2}></Grid>
+              </Grid>
+            </CSSTransition>
+          </TransitionGroup>
+        <Footer />
+      </>
+      )} />
     </Router>
   );
 }
