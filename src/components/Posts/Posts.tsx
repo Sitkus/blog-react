@@ -29,8 +29,8 @@ const Posts = () => {
     <>
       {
         posts.map((post, index) => (
-          <Grid item key={index}>
-            <Card className={classes.root}>
+          <Grid item xs={10} sm={12} className={classes.gridItem} key={index}>
+            <Card>
               <CardActionArea onClick={() => openPost(post.href)}>
                 <CardMedia
                   className={classes.media}

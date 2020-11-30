@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import useStyles from './Blog.style';
 import Posts from '../Posts/Posts';
 
@@ -13,10 +13,9 @@ const Blog = () => {
       container 
       item 
       sm={8}
-      direction="column"
       justify="center"
       alignItems="center"
-      spacing={5}
+      // spacing={3}
       className={classes.gridRoot}
     >
       <Posts />

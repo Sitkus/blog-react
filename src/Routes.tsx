@@ -18,14 +18,14 @@ const Routes = () => {
     <Router>
       <Header />
       <Grid container>
-        <Grid item sm={2}></Grid>
+        <Grid item xs={1} sm={2}></Grid>
         <Switch>
           <>
             <Route exact path={'/'} component={Blog} />
             <Route exact path={`${postHref}`} component={Post} />
           </>
         </Switch>
-        <Grid item sm={2}></Grid>
+        <Grid item xs={1} sm={2}></Grid>
       </Grid>
       <Footer />
     </Router>

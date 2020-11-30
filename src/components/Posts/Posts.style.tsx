@@ -1,8 +1,11 @@
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    maxWidth: 700
+  gridItem: {
+    marginBottom: '80px',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '40px'
+    }
   },
   media: {
     height: 260,
