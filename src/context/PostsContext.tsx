@@ -29,7 +29,7 @@ interface Content {
 const PostHrefContext = createContext<PostHrefContextProps>({ postHref: '', setPostHref: '' });
 const PostsContext = createContext<PostsContextProps>({ posts: [], setPosts: [] });
 
-const PostsProvider = ({ children }: PostsProviderProps) => {
+const PostsProvider: React.FC<PostsProviderProps> = ({ children }) => {
   const [postHref, setPostHref] = useState('');
   const [posts, setPosts] = useState(data);
 

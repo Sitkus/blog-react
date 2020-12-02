@@ -1,11 +1,12 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import useStyles from './Blog.style';
 import Posts from '../Posts/Posts';
+import { Grid } from '@material-ui/core';
 
-// Material UI Imports
-import Grid from '@material-ui/core/Grid';
+interface Props extends RouteComponentProps {};
 
-const Blog = () => {
+const Blog: React.FC<Props> = ({ history }) => {
   const classes = useStyles();
 
   return (
@@ -15,7 +16,6 @@ const Blog = () => {
       sm={8}
       justify="center"
       alignItems="center"
-      // spacing={3}
       className={classes.gridRoot}
     >
       <Posts />

@@ -4,12 +4,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   postGrid: {
     position: 'absolute',
     top: '170px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '100%'
+    width: '100%',
   },
   container: {
-    // margin: '50px 0'
+    margin: '0 auto 50px'
   },
   title: {
     marginBottom: '20px',

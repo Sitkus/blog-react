@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from './Header.style';
-
-// Material UI Imports
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import { AppBar, Toolbar, Typography, Input, InputAdornment } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
 
-const Header = () => {
+const Header: React.FC = () => {
   const classes = useStyles();
 
   const filterPosts = (input: string) => {

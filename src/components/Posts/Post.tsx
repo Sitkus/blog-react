@@ -2,19 +2,12 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom'
 import useStyles from './Post.style';
 import { usePostHref, usePosts } from '../../context/PostsContext';
+import { Grid, Typography, Container, Button, ButtonGroup } from '@material-ui/core';
 
-// Material UI Imports
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+interface Props extends RouteComponentProps {};
 
-interface Props extends RouteComponentProps { }
-
-const Post: React.FC<Props> = ({ history, location, match }) => {
+const Post: React.FC<Props> = ({ history, match }) => {
   const classes = useStyles();
-
   const { setPostHref } = usePostHref();
   const { posts } = usePosts();
 
@@ -38,7 +31,7 @@ const Post: React.FC<Props> = ({ history, location, match }) => {
         posts.map((post, index) => (
           post.href === match.url ?
           <Grid item className={classes.postGrid} key={index}>
-            <Container maxWidth="md">
+            <Container maxWidth="md" className={classes.container}>
               <Typography variant="h1" className={classes.title}>
                 {post.title}
               </Typography>
