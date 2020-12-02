@@ -19,7 +19,7 @@ const Header = () => {
   }
 
   return (
-    <AppBar position="static" className={classes.root}>
+    <AppBar position="static" color="secondary" className={classes.root}>
       <Toolbar className={classes.root}>
         <Typography className={classes.title} variant="h6">
           <Link to={'/'} className={classes.link}>

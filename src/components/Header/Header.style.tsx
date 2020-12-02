@@ -3,8 +3,11 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.secondary.main,
-    color: 'white'
+    color: 'white',
+    padding: '20px 35px',
+    [theme.breakpoints.down('xs')]: {
+      padding: '10px 0px'
+    },
   },
   link: {
     textDecoration: 'none',
