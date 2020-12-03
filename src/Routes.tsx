@@ -14,7 +14,7 @@ const Routes: React.FC = () => {
     <Router>
       <Route render={({ location }) => (
         <>
-          <Header />
+          <Header location={location} />
             <TransitionGroup>
               <CSSTransition
                 timeout={500}

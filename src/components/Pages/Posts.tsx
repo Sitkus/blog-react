@@ -9,7 +9,7 @@ const Posts = withRouter(({ history }) => {
   const { setPostHref } = usePostHref();
   const { posts } = usePosts();
 
-  const openPost = (href: string) => {
+  const openPost = (href: string): void => {
     setPostHref(href);
     history.push(href);
   }

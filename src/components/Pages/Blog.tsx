@@ -1,12 +1,12 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import useStyles from './Blog.style';
-import Posts from '../Posts/Posts';
+import Posts from './Posts';
 import { Grid } from '@material-ui/core';
 
-interface Props extends RouteComponentProps {};
+interface Props extends RouteComponentProps { };
 
-const Blog: React.FC<Props> = ({ history }) => {
+const Blog: React.FC<Props> = () => {
   const classes = useStyles();
 
   return (

@@ -1,13 +1,8 @@
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
-  postGrid: {
-    position: 'absolute',
-    top: '170px',
-    width: '100%',
-  },
   container: {
-    margin: '0 auto 50px'
+    margin: '50px auto'
   },
   title: {
     marginBottom: '20px',

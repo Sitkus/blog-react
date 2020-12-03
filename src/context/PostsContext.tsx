@@ -30,8 +30,8 @@ const PostHrefContext = createContext<PostHrefContextProps>({ postHref: '', setP
 const PostsContext = createContext<PostsContextProps>({ posts: [], setPosts: [] });
 
 const PostsProvider: React.FC<PostsProviderProps> = ({ children }) => {
-  const [postHref, setPostHref] = useState('');
-  const [posts, setPosts] = useState(data);
+  const [ postHref, setPostHref ] = useState('');
+  const [ posts, setPosts ] = useState(data);
 
   return (
     <PostHrefContext.Provider value={{ postHref, setPostHref }}>
