@@ -18,6 +18,7 @@ const Header = ({ location }: any) => {
 
   useEffect(() => {
     setPosts([...originalPosts]);
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (

@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: 'white',
     padding: '20px 35px',
     [theme.breakpoints.down('xs')]: {
-      padding: '10px 0px'
+      padding: '10px 10px'
     },
   },
   link: {

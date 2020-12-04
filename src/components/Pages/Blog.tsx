@@ -16,6 +16,7 @@ const Blog: React.FC<Props> = () => {
       sm={8}
       justify="center"
       alignItems="center"
+      // spacing={5}
       className={classes.gridRoot}
     >
       <Posts />

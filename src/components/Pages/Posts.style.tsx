@@ -2,13 +2,13 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   gridItem: {
-    maxWidth: '500px',
-    marginBottom: '40px',
+    maxWidth: '700px',
+    margin: '40px',
     [theme.breakpoints.down('xs')]: {
       marginBottom: '30px',
     },
     '&:last-child': {
-      marginBotton: 0
+      marginBottom: 0
     }
   },
   media: {
